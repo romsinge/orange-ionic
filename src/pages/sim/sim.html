@@ -14,6 +14,15 @@
 
 
 <ion-content padding>
+  <h4>Camera</h4>
   <button ion-button (click)="handlePhotoClick()">Take photo</button>
   <img [src]="image" />
+
+  <h4>Sim</h4>
+  <button ion-button (click)="handleSimClick()">Get sim data</button>
+  {{ simData | json }}
+
+  <h4>Uid</h4>
+  <button ion-button (click)="handleUidClick()">Get uid data</button>
+  {{ uidData | json }}
 </ion-content>

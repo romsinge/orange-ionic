@@ -1,4 +1,5 @@
 import { SimPageModule } from './../pages/sim/sim.module';
+import { MapPageModule } from './../pages/map/map.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -11,6 +12,10 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera'
+import { Sim } from '@ionic-native/sim';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { Uid } from '@ionic-native/uid';
+import { AgmCoreModule } from '@agm/core'
 
 @NgModule({
   declarations: [
@@ -22,7 +27,11 @@ import { Camera } from '@ionic-native/camera'
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    SimPageModule
+    SimPageModule,
+    MapPageModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDDkRtKIq2c9gEsZcQ-QAj9BVxH_heiUTE'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,6 +44,9 @@ import { Camera } from '@ionic-native/camera'
     StatusBar,
     SplashScreen,
     Camera,
+    Sim,
+    Uid,
+    AndroidPermissions,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
