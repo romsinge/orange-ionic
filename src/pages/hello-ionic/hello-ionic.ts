@@ -12,6 +12,6 @@ export class HelloIonicPage {
   }
 
   goToSim() {
-    this.navCtrl.push(SimPage)
+    this.navCtrl.push('sim')
   }
 }
