@@ -49,14 +49,14 @@ export class SimPage {
   }
 
   handlePhotoClick() {
-    if (this.platform.is('cordova')) {
+    // if (this.platform.is('cordova')) {
       this.camera.getPicture(this.options).then(imageData => {
       
         this.image = "data:image/jpeg;base64," + imageData
       })
-    } else {
+    // } else {
       console.log("Cordova not available")
-    }
+    // }
   }
 
   handleSimClick() {

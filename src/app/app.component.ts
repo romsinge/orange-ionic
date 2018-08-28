@@ -1,3 +1,4 @@
+import { ContactListPage } from './../pages/contact-list/contact-list';
 import { MapPage } from './../pages/map/map';
 import { Component, ViewChild } from '@angular/core';
 
@@ -26,13 +27,14 @@ export class MyApp {
     public statusBar: StatusBar,
     public splashScreen: SplashScreen
   ) {
-    this.initializeApp();
+    this.initializeApp  ();
 
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
       { title: 'My First List', component: ListPage },
-      { title: 'Map', component: MapPage }
+      { title: 'Map', component: MapPage },
+      { title: 'Contact List', component: ContactListPage }
     ];
   }
 

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Add contact
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form (submit)="handleSubmit($event)" [formGroup]="contactForm">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input formControlName="name" type="text"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+            <ion-label floating>Phone</ion-label>
+            <ion-input formControlName="phoneNumber" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+    
+      </ion-list>
+    
+      <div padding>
+        <button [disabled]="contactForm.invalid" type="submit" ion-button color="primary" block>Add</button>
+      </div>
+    </form>
+</ion-content>
