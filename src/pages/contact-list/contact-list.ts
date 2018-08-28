@@ -26,12 +26,15 @@ export class ContactListPage {
   ) {
   }
 
-  contacts$: Promise<any[]>
+  contacts: any[] = []
+  currentPage: number = 0
 
   ionViewDidLoad() {
 
     this.data.initStorage().then(() => {
-      this.contacts$ = this.data.getContacts()
+      this.data.getContacts(0).then(contacts => {
+        this.contacts = contacts
+      })
     })
   }
 
@@ -40,10 +43,25 @@ export class ContactListPage {
     
     addContactModal.onDidDismiss(newContact => {
       this.data.setContact(newContact).then(() => {
-        this.contacts$ = this.data.getContacts()
+        this.data.getContacts(0).then(contacts => {
+          this.contacts = contacts
+        })
       })
     })
 
     addContactModal.present()
+  }
+
+  doInfinite(infiniteScroll) {
+
+    setTimeout(() => {
+      this.data.getContacts(this.currentPage + 1).then(newContacts => {
+        console.log(newContacts)
+        this.contacts = this.contacts.concat(newContacts)
+        this.currentPage++
+
+        infiniteScroll.complete()
+      })
+    }, 1000)
   }
 }

@@ -48,6 +48,181 @@ export class DataProvider {
       name: 'Mahmoud',
       phoneNumber: '0022241234',
       email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
     }
   ]
 
@@ -62,8 +237,10 @@ export class DataProvider {
     // }
   }
 
-  getContacts() {
-    return this.nativeStorage.getItem('contacts')
+  async getContacts(page) {
+    let contacts: any[] = await this.nativeStorage.getItem('contacts')
+
+    return contacts.slice(page * 10, (page * 10) + 10)
   }
 
   async setContact(newContact) {
