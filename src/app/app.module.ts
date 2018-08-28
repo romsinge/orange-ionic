@@ -16,6 +16,8 @@ import { Sim } from '@ionic-native/sim';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { Uid } from '@ionic-native/uid';
 import { AgmCoreModule } from '@agm/core'
+import { Geolocation } from '@ionic-native/geolocation'
+import { GOOGLEMAPS_API_KEY } from '../apiKeys';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { AgmCoreModule } from '@agm/core'
     SimPageModule,
     MapPageModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDDkRtKIq2c9gEsZcQ-QAj9BVxH_heiUTE'
+      apiKey: GOOGLEMAPS_API_KEY
     })
   ],
   bootstrap: [IonicApp],
@@ -47,6 +49,7 @@ import { AgmCoreModule } from '@agm/core'
     Sim,
     Uid,
     AndroidPermissions,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
