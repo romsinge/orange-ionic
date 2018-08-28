@@ -29,6 +29,7 @@ export class ContactListPage {
   contacts$: Promise<any[]>
 
   ionViewDidLoad() {
+
     this.data.initStorage().then(() => {
       this.contacts$ = this.data.getContacts()
     })

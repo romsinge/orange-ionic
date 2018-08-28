@@ -28,17 +28,38 @@ export class DataProvider {
       name: 'Mahmoud',
       phoneNumber: '0022241234',
       email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
+    },
+    {
+      name: 'Mahmoud',
+      phoneNumber: '0022241234',
+      email: 'mahmoud@gmail.com'
     }
   ]
 
   async initStorage() {
-    let contacts = await this.nativeStorage.getItem('contacts')
+    await this.platform.ready()
+    // let contacts = await this.nativeStorage.getItem('contacts')
 
-    if (contacts && contacts.length) {
-      return
-    }
-    
-    await this.nativeStorage.setItem('contacts', this.contacts)
+    // if (contacts && contacts.length) {
+    //   return false
+    // } else {
+      return await this.nativeStorage.setItem('contacts', this.contacts)
+    // }
   }
 
   getContacts() {
